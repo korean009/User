@@ -1,3 +1,4 @@
+# __main__.py
 import sys
 import asyncio
 import importlib
@@ -12,15 +13,15 @@ async def anony_boot():
     try:
         await shizuchat.start()
     except Exception as ex:
-        LOGGER.error(ex)
+        LOGGER.error("Failed to start shizuchat: %s", ex)
         sys.exit(1)
 
-    # Import all modules
+    # Import modules after bot started (safe)
     for all_module in ALL_MODULES:
         importlib.import_module(f"shizuchat.modules.{all_module}")
-        LOGGER.info(f"Imported: {all_module}")
+        LOGGER.info(f"Imported module: {all_module}")
 
-    # Set bot commands
+    # Set bot commands (best-effort)
     try:
         await shizuchat.set_bot_commands([
             BotCommand("start", "Start the bot"),
@@ -31,17 +32,17 @@ async def anony_boot():
         ])
         LOGGER.info("Bot commands set.")
     except Exception as ex:
-        LOGGER.error(f"Failed to set commands: {ex}")
+        LOGGER.warning("Could not set bot commands: %s", ex)
 
-    LOGGER.info(f"@{shizuchat.username} Started!")
-
+    LOGGER.info(f"@{shizuchat.username} started.")
     try:
         await shizuchat.send_message(int(OWNER_ID), f"{shizuchat.mention} is online.")
-    except:
-        LOGGER.warning("Start bot from owner account first.")
+    except Exception:
+        LOGGER.info("Could not notify owner; ensure OWNER_ID is correct.")
 
     await idle()
 
 
 if __name__ == "__main__":
+    # asyncio.run creates and manages the loop safely
     asyncio.run(anony_boot())
