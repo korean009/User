@@ -10,13 +10,13 @@ import threading
 from pyrogram import idle
 from pyrogram.types import BotCommand
 
-from logger import LOGGER
 from client import shizuchat
 from database import mongodb
 from scheduler import scheduler
 from server import run_flask
 from config import OWNER_ID
 from shizuchat.modules import ALL_MODULES
+from logger import LOGGER
 
 
 async def boot():
