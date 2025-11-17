@@ -4,11 +4,21 @@ import asyncio
 import importlib
 from flask import Flask
 import threading
+import uvloop
 from pyrogram import idle
 from pyrogram.types import BotCommand
+
+uvloop.install()
+
+# Create and set event loop before client instantiation
+loop = asyncio.new_event_loop()
+asyncio.set_event_loop(loop)
+
+from shizuchat import ShizuChat, LOGGER
 from config import OWNER_ID
-from shizuchat import LOGGER, shizuchat
 from shizuchat.modules import ALL_MODULES
+
+shizuchat = ShizuChat()
 
 async def anony_boot():
     try:
@@ -56,9 +66,8 @@ def run_flask():
 
 if __name__ == "__main__":
     # Start Flask server in a new thread
-    flask_thread = threading.Thread(target=run_flask)
+    flask_thread = threading.Thread(target=run_flask, daemon=True)
     flask_thread.start()
 
     # Start the bot asynchronously  
-    asyncio.get_event_loop().run_until_complete(anony_boot())  
-    LOGGER.info("ꜱᴛᴏᴘᴘɪɴɢ ꜱʜɪᴢᴜᴄʜᴀᴛ ʙᴏᴛ...")
+    loop.run_until_complete(anony_boot())  
