@@ -56,8 +56,10 @@ def run_flask():
     app.run(host="0.0.0.0", port=8000)
 
 if __name__ == "__main__":
+    # Start Flask server in a new thread
     flask_thread = threading.Thread(target=run_flask)
     flask_thread.start()
 
-    asyncio.run(anony_boot())
+    # Start the bot asynchronously
+    asyncio.get_event_loop().run_until_complete(anony_boot())
     LOGGER.info("ꜱᴛᴏᴘᴘɪɴɢ ꜱʜɪᴢᴜᴄʜᴀᴛ ʙᴏᴛ...")
