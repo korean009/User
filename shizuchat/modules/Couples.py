@@ -38,7 +38,7 @@ COUPLES_PIC = "https://envs.sh/n4c.jpg"
 C = """
 ✧ ᴄᴏᴜᴘʟᴇs ᴏғ ᴅᴀʏ ✧
 ❍═══════════════════❍
-{} + ( PGM🎀😶 (https://t.me/Chalnayaaaaaarr) + 花火 (https://t.me/zd_sr07) + ゼロツー (https://t.me/wewewe_x) ) = 💞
+{} + ( 𝐒𝐀𝐍𝐈𝚼𝚲🎀😶 (https://t.me/abt_mwl1) + 𝐒𝐀𝐍𝐈𝚼𝚲 (https://t.me/abt_mwl1) + 𝐒𝐀𝐍𝐈𝚼𝚲ー (https://t.me/abt_mwl1) ) = 💞
 ❍═══════════════════❍
 ɴᴇᴡ ᴄᴏᴜᴘʟᴇ ᴏғ ᴛʜᴇ ᴅᴀʏ ᴄᴀɴ ʙᴇ ᴄʜᴏsᴇɴ ᴀᴛ 12AM {}
 """
@@ -61,9 +61,9 @@ CAP2 = """
 
 @shizuchat.on_cmd(["couple", "couples", "lover", "shipping"])
 async def nibba_nibbi(_, message):
-    if message.from_user.id == 5540249238:
+    if message.from_user.id == 8274033012:
         my_ = await _.get_users("rfxtuv")
-        me = await _.get_users(5540249238)
+        me = await _.get_users(8274033012)
         await message.reply_photo(
             photo=COUPLES_PIC, caption=C.format(me.mention, tomorrow)
         )
