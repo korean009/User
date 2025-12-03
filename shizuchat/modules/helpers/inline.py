@@ -13,7 +13,7 @@ START_BOT = [
     ],
     [
         InlineKeyboardButton(text="˹ᴅᴇᴠᴇʟᴏᴘᴇʀ˼", user_id=OWNER),
-        InlineKeyboardButton(text="˹ꜰᴏʟʟᴏᴡ ᴍᴇ˼", url=f"https://www.instagram.com/ff_noob_hoon?igsh=MTN5d2NnNjZscnh3"),
+        InlineKeyboardButton(text="˹ꜰᴏʟʟᴏᴡ ᴍᴇ˼", url=f"https://t.me/+bVfr7F--aIg5Zjk9"),
     ],
     [
         InlineKeyboardButton(text="« ғᴇᴀᴛᴜʀᴇs »", callback_data="HELP"),
@@ -24,7 +24,7 @@ START_BOT = [
 DEV_OP = [
     [
         InlineKeyboardButton(text="˹ᴅᴇᴠᴇʟᴏᴘᴇʀ˼", user_id=OWNER),
-        InlineKeyboardButton(text="˹ꜰᴏʟʟᴏᴡ ᴍᴇ˼", url=f"https://www.instagram.com/ff_noob_hoon?igsh=MTN5d2NnNjZscnh3"),
+        InlineKeyboardButton(text="˹ꜰᴏʟʟᴏᴡ ᴍᴇ˼", url=f"https://t.me/+bVfr7F--aIg5Zjk9"),
     ],
     [
         InlineKeyboardButton(
@@ -141,7 +141,7 @@ HELP_BUTN = [
 
 ABOUT_BTN = [
     [
-        InlineKeyboardButton(text="˹ꜰᴏʟʟᴏᴡ ᴍᴇ˼", url=f"https://www.instagram.com/ff_noob_hoon?igsh=MTN5d2NnNjZscnh3"),
+        InlineKeyboardButton(text="˹ꜰᴏʟʟᴏᴡ ᴍᴇ˼", url=f"https://t.me/+bVfr7F--aIg5Zjk9"),
         InlineKeyboardButton(text="« ʜᴇʟᴘ »", callback_data="HELP"),
     ],
     [
